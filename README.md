@@ -19,107 +19,6 @@
 | else     | is      | with   |
 | except   | lambda  | yield  |
 
-### 多行语句
-
-Python语句中一般以新行作为语句的结束符。
-
-但是我们可以使用斜杠（ \）将一行的语句分为多行显示，如下所示：
-
-```python
-total = item_one + \
-        item_two + \
-        item_three
-```
-
-语句中包含 [], {} 或 () 括号就不需要使用多行连接符。如下实例：
-
-```python
-days = ['Monday', 'Tuesday', 'Wednesday',
-        'Thursday', 'Friday']
-```
-
-### Python 引号
-
-Python 可以使用引号( **'** )、双引号( **"** )、三引号( **'''** 或 **"""** ) 来表示字符串，引号的开始与结束必须是相同类型的。
-
-其中三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。
-
-```python
-word = 'word'
-sentence = "这是一个句子。"
-paragraph = """这是一个段落。
-包含了多个语句"""
-```
-
-### Python注释
-
-python中单行注释采用 **#** 开头。
-
-```python
-#-*- coding: UTF-8 -*-
-#文件名：test.py
-
-#第一个注释
-print ("Hello, Python!")  # 第二个注释
-```
-
-注释可以在语句或表达式行末：
-
-```python
-name = "Runoob" # 这里的内容是一个注释
-```
-
-python 中多行注释使用三个单引号 **'''** 或三个双引号 **"""**。
-
-```python
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-# 文件名：test.py
-
-
-'''
-这是多行注释，使用单引号。
-这是多行注释，使用单引号。
-这是多行注释，使用单引号。
-'''
-
-"""
-这是多行注释，使用双引号。
-这是多行注释，使用双引号。
-这是多行注释，使用双引号。
-"""
-```
-
-### 同一行显示多条语句
-
-Python可以在同一行中使用多条语句，语句之间使用分号(;)分割，以下是一个简单的实例：
-
-```python
-import sys; x = 'runoob'; sys.stdout.write(x + '\n')
-```
-
-### 数字(Number)类型
-
-python中数字有四种类型：整数、布尔型、浮点数和复数。
-
-- **int** (整数), 如 1, 只有一种整数类型 int。
-- **bool** (布尔), 如 True。
-- **float** (浮点数), 如 1.23、3E-2
-- **complex** (复数), 如 1 + 2j、 1.1 + 2.2j
-
-### 字符串(String)
-
-- Python 中单引号 **`'`** 和双引号 `"` 使用完全相同。
-- 使用三引号(**`'''`** 或 **`"""`**)可以指定一个多行字符串。
-- 转义符  `\` 。
-- 反斜杠可以用来转义，使用 **r** 可以让反斜杠不发生转义。 如 **r"this is a line with \n"** 则 **\n** 会显示，并不是换行。
-- 按字面意义级联字符串，如 **"this " "is " "string"** 会被自动转换为 **this is string**。
-- 字符串可以用 **+** 运算符连接在一起，用 ***** 运算符重复。
-- Python 中的字符串有两种索引方式，从左往右以 `0` 开始，从右往左以 `-1` 开始。
-- Python 中的字符串不能改变。
-- Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。
-- 字符串的截取的语法格式如下：**变量[头下标:尾下标:步长]**
-
 ### print 输出
 
 `print()` 若为数字则可直接输出，若为字符串（字母）则需加引号，双引号。亦可以输出运算符：如基本加减乘除，并会自动输出结果。
@@ -183,6 +82,84 @@ while b < 1000:
 
 ```python
 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
+```
+
+### 多行语句
+
+Python语句中一般以新行作为语句的结束符。
+
+但是我们可以使用斜杠（ \）将一行的语句分为多行显示，如下所示：
+
+```python
+total = item_one + \
+        item_two + \
+        item_three
+```
+
+语句中包含 [], {} 或 () 括号就不需要使用多行连接符。如下实例：
+
+```python
+days = ['Monday', 'Tuesday', 'Wednesday',
+        'Thursday', 'Friday']
+```
+
+### 同一行使用多条语句
+
+Python可以在同一行中使用多条语句，语句之间使用分号(;)分割，以下是一个简单的实例：
+
+```python
+import sys; x = 'runoob'; sys.stdout.write(x + '\n')
+```
+
+
+
+### Python 引号
+
+Python 可以使用引号( **'** )、双引号( **"** )、三引号( **'''** 或 **"""** ) 来表示字符串，引号的开始与结束必须是相同类型的。
+
+其中三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。
+
+```python
+word = 'word'
+sentence = "这是一个句子。"
+paragraph = """这是一个段落。
+包含了多个语句"""
+```
+
+### Python 注释
+
+python中单行注释采用 **#** 开头。
+
+```python
+#第一个注释
+print ("Hello, Python!")  # 第二个注释
+```
+
+注释可以在语句或表达式行末：
+
+```python
+name = "Runoob" # 这里的内容是一个注释
+```
+
+python 中多行注释使用三个单引号 **'''** 或三个双引号 **"""**。
+
+```python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+# 文件名：test.py
+
+
+'''
+这是多行注释，使用单引号。
+这是多行注释，使用单引号。
+这是多行注释，使用单引号。
+'''
+
+"""
+这是多行注释，使用双引号。
+这是多行注释，使用双引号。
+这是多行注释，使用双引号。
+"""
 ```
 
 ### import 与 from...import
@@ -266,7 +243,12 @@ Python3 的六个标准数据类型中：
 
 #### Number（数字）
 
-Python 数字数据类型用于存储数值。
+python中数字有四种类型：整数、布尔型、浮点数和复数。
+
+- **int** (整数), 如 1, 只有一种整数类型 int。
+- **bool** (布尔), 如 True。
+- **float** (浮点数), 如 1.23、3E-2
+- **complex** (复数), 如 1 + 2j、 1.1 + 2.2j
 
 数据类型是不允许改变的,这就意味着如果改变数字数据类型的值，将重新分配内存空间。
 
@@ -283,7 +265,7 @@ number = 0xA0F # 十六进制
 number
 2575
 
-number=0o37 # 八进制
+number=0x37 # 八进制
 number
 31
 ```
@@ -456,6 +438,17 @@ Python包括以下三角函数：
 
 #### String（字符串）
 
+- Python 中单引号 **`'`** 和双引号 `"` 使用完全相同。
+- 使用三引号(**`'''`** 或 **`"""`**)可以指定一个多行字符串。
+- 转义符  `\` 。
+- 反斜杠可以用来转义，使用 **r** 可以让反斜杠不发生转义。 如 **r"this is a line with \n"** 则 **\n** 会显示，并不是换行。
+- 按字面意义级联字符串，如 **"this " "is " "string"** 会被自动转换为 **this is string**。
+- 字符串可以用 **+** 运算符连接在一起，用 ***** 运算符重复。
+- Python 中的字符串有两种索引方式，从左往右以 `0` 开始，从右往左以 `-1` 开始。
+- Python 中的字符串不能改变。
+- Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。
+- 字符串的截取的语法格式如下：**变量[头下标:尾下标:步长]**
+
 字符串是 Python 中最常用的数据类型。我们可以使用引号( **'** 或 **"** )来创建字符串。
 
 创建字符串很简单，只要为变量分配一个值即可。例如：
@@ -465,7 +458,9 @@ var1 = 'Hello World!'
 var2 = "Runoob"
 ```
 
-##### Python 访问字符串中的值
+
+
+##### 访问字符串中的值
 
 Python 不支持单字符类型，单字符在 Python 中也是作为一个字符串使用。
 
@@ -526,7 +521,9 @@ RunoobRunoob
 RunoobTEST
 ```
 
-##### Python 转义字符
+
+
+##### 转义字符
 
 在需要在字符中使用特殊字符时，python 用反斜杠 **\** 转义字符。如下表：
 
@@ -579,7 +576,9 @@ hexadecimal_number = hex(decimal_number)  # 十进制转换为十六进制
 print('转换为十六进制:', hexadecimal_number) # 转换为十六进制: 0x2a
 ```
 
-##### Python 字符串运算符
+
+
+##### 字符串运算符
 
 下表实例变量 a 值为字符串 "Hello"，b 变量值为 "Python"：
 
@@ -593,21 +592,209 @@ print('转换为十六进制:', hexadecimal_number) # 转换为十六进制: 0x2
 | not in | 成员运算符 - 如果字符串中不包含给定的字符返回 True           | **'M' not in a** 输出结果 True  |
 | r/R    | 原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用，没有转义特殊或不能打印的字符。 原始字符串除在字符串的第一个引号前加上字母 **r**（可以大小写）以外，与普通字符串有着几乎完全相同的语法。 | `print( r'\n' ) print( R'\n' )` |
 
-##### Python 字符串格式化
 
-Python 支持格式化字符串的输出 。尽管这样可能会用到非常复杂的表达式，但最基本的用法是将一个值插入到一个有字符串格式符 %s 的字符串中。
 
-在 Python 中，字符串格式化使用与 C 中 sprintf 函数一样的语法。
+##### 字符串格式化
+
+Python 支持格式化字符串的输出 。
+
+有如下三种方法：
+
+- 占位符
+- f-string
+- str.format()方法
+
+
+
+**占位符**
+
+使用%s，%d，%f，%lf作为占位符
 
 ```python
-print ("我叫 %s 今年 %d 岁!" % ('小明', 10))
+name = "张三"
+age = "18"
+score = "98.5"
+print('姓名:%s,年龄:%d,成绩:%f' % (name,age,score))
 ```
 
-以上实例输出结果：
+
+
+**f-string**
+
+转义字符f处理字符串
 
 ```python
-我叫 小明 今年 10 岁!
+print(f'姓名:{name},年龄:{age},成绩:{score}')
 ```
+
+**str.format()方法**
+
+```python
+print('姓名:{0},年龄:{1},成绩:{2}'.format(name,age,score))
+```
+
+
+
+##### format的详细格式控制
+
+| :        | 引导符号                                   |
+| -------- | ------------------------------------------ |
+| 填充     | 填充                                       |
+| 对齐方式 | < 左对齐    >右对齐    ^居中对齐           |
+| 宽度     | 字符串的输出宽度                           |
+| ,        | 数字的千位分隔符                           |
+| .精度    | 浮点数小数部分的精度或字符串的最大输出长度 |
+| 类型     | 整数类型:b\d\o\x\X    浮点数类型:e\E\f\%   |
+
+用例
+
+```python
+s = 'helloworld'
+print('{0:*<20}'.format(s))		#0代表第一个参数，即s；字符串的显示宽度为20，左对齐，空白部分使用*填充
+print('{0:*>20}'.format(s))
+print('{0:*^20}'.format(s))
+#千分位分隔符
+print('{0:,}'.format(987654321))
+print('{0:,}'.format(987654321.9876))
+
+#浮点数小数部分的精度
+print('{0:.2f}'.format(3.1415926))
+#字符串类型 .表示是最大的显示长度
+print('{0:.5}'.format('helloworld'))
+
+#整数类型
+print('二进制:{0:b},八进制:{0:o},十进制:{0:d},十六进制:{0:x},十六进制:{0:X}'.format(425))
+
+#浮点数类型
+print('{0:.2f},{0:.2E},{0:.2e},{0:.2%}'.format(3.1415926))
+```
+
+输出结果：
+
+```
+helloworld**********
+**********helloworld
+*****helloworld*****
+987,654,321
+987,654,321.9876
+3.14
+hello
+二进制:110101001,八进制:651,十进制:425,十六进制:1a9,十六进制:1A9
+3.14,3.14E+00,3.14e+00,314.16%
+```
+
+
+
+##### 字符串的编码和解码
+
+**编码**
+
+将str类型转换为bytes类型，需要使用到字符串的encode()方法；语法格式为：
+
+```python
+str.encode(encoding = 'utf-8' , errors = 'strict/ignore/replace')
+```
+
+**解码**
+
+将bytes类型转换为str类型，需要使用的bytes类型的decode()方法；语法格式为：
+
+```python
+bytes.decode(encoding = 'utf-8' , errors = 'strict/ignore/replace')
+```
+
+
+
+errors需要从三个属性中选择一个
+
+- strict：终端报错，编码错误
+- ignore：忽略
+- replace：替换为"?"
+
+##### 数据的验证
+
+| 方法名          | 描述说明                                                   |
+| --------------- | ---------------------------------------------------------- |
+| str.isdigit()   | 所有字符都是数字(阿拉伯数字)                               |
+| str.isnumeric() | 所有的字符都是数字(阿拉伯数字，罗马数字，中文数字(一、壹)) |
+| str.isalpha()   | 所有的字符都是字母(包含中文字符)                           |
+| str.isalnum()   | 所有字符都是数字或字母(包含中文字符)                       |
+| str.islower()   | 所有字符都是小写(中文既是大写又是小写)                     |
+| str.isupper()   | 所有字符都是大写(中文既是大写又是小写)                     |
+| str.istitle()   | 所有字符都是首字母大写(以空格区分单词)                     |
+| str.isspace()   | 所有字符都是空白字符(\n、\t等)                             |
+
+
+
+##### 字符串的拼接
+
+1. 使用 '+' 进行拼接
+
+2. 使用字符串的join()方法 
+
+   ```python
+   print(''.join([s1,s2])) 	#使用空字符串进行拼接
+   print('*'.join(['hello','world','python','java''rust]))
+   print('你好'.join(['hello','world','python','java','rust']))
+   ```
+
+   输出结果为：
+
+   ```python
+   htlloworld
+   hello*world*python*javarust
+   hello你好world你好python你好java你好rust
+   ```
+
+3. 直接拼接
+
+   ```python
+   print('hello''world')
+   ```
+
+4. 使用格式化字符串进行拼接
+
+
+
+##### 字符串的去重
+
+1. 字符串拼接及not in
+
+   ```python
+   s = 'helloworldhelloworldhelloworldfjoaisjd'
+   new_s = ''
+   for item in s:
+       if item not in new_s:
+           new_s += item
+   print(new_s)
+   ```
+
+   输出结果
+
+   ```python
+   helowrdfjais
+   ```
+
+2. 使用索引+not in
+
+   ```python
+   new_s2 = ''
+   for i i range(len(s)):
+       if s[i] not in new_s2:
+           new_s2 += s[i]
+   print(new_s2)
+   ```
+
+3. 通过集合去重+列表排序
+
+   ```python
+   new_s3 = set(s)
+   lst = list(new_s3)
+   lst.sort(key = s.index)
+   print(''.join(lst))
+   ```
+
+   
 
 ##### Python三引号
 
@@ -640,6 +827,8 @@ python三引号允许一个字符串跨多行，字符串中可以包含换行�
 #### List（列表）
 
 List（列表） 是 Python 中使用最频繁的数据类型。
+
+**List内部元素是允许重复的！**
 
 列表可以完成大多数集合类的数据结构实现。列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。
 
@@ -1596,3 +1785,132 @@ for i in range(0, 10, 3) :
 Python pass是空语句，是为了保持程序结构的完整性。
 
 pass 不做任何事情，一般用做占位语句。
+
+### 正则表达式
+
+#### 元字符
+
+具有特殊意义的专用字符
+
+| 元字符 | 描述说明                 | 举例          | 结果                      |
+| ------ | ------------------------ | ------------- | ------------------------- |
+| .      | 匹配任意字符(除\n)       | 'p\nytho\tn'  | p、y、t、h、o、\t、n      |
+| \w     | 匹配字母、数字、下划线   | 'python\n123' | p、y、t、h、o、n、1、2、3 |
+| \W     | 匹配非字母、数字、下划线 | 'python\n123' | \n                        |
+| \s     | 匹配任意空白字符         | 'python\t123' | \t                        |
+| \S     | 匹配任意非空白字符       | 'python\t123' | p、y、t、h、o、n、1、2、3 |
+| \d     | 匹配任意十进制数         | 'python\t123' | 1、2、3                   |
+
+#### 限定符
+
+用于限定匹配的次数
+
+| 限定符 | 描述说明                       | 举例        | 结果                               |
+| ------ | ------------------------------ | ----------- | ---------------------------------- |
+| ?      | 匹配前面的字符0次或1次         | colou?r     | 可以匹配color或colour              |
+| +      | 匹配前面的字符1次或多次        | colou+r     | 可以匹配colour或colouu...r         |
+| *      | 匹配前面的字符0次或多次        | colou*r     | 可以匹配color或colouu...r          |
+| {n}    | 匹配前面的字符n次              | colou{2}r   | 可以匹配colour                     |
+| {n,}   | 匹配前面的字符最少n次          | colou{2,}r  | 可以匹配colour或colouu...r         |
+| {n,m}  | 匹配前面的字符最少n次，最多m次 | colou{2,4}r | 可以匹配colour或colouuur或coluuuur |
+
+#### 其他字符
+
+| 其他字符        | 描述说明                 | 举例                         | 结果                                                         |
+| --------------- | ------------------------ | ---------------------------- | ------------------------------------------------------------ |
+| 区间字符[]      | 匹配[]中所指定的字符     | [.?!]    [0-9]               | 匹配表带你符号点、问号，感叹号；匹配0、1、2、3、4、5、6、7、8、9 |
+| 排除字符^       | 匹配不在[]中指定的字符   | [^0-9]                       | 匹配除0、1、2、3、4、5、6、7、8、9的字符                     |
+| 选择字符\|      | 用于匹配\|左右的任意字符 | \d{18}\|\d{15}               | 匹配15位身份证或18位身份证                                   |
+| 转义字符        | 同Python中的转义字符     | \\.                          | 将.作为普通字符使用                                          |
+| [\u4e00-\u9fa5] | 匹配任意一个汉字         |                              |                                                              |
+| 分组()          | 改变限定符的作用         | six\|fourth    (six\|four)th | 匹配six或fourth      匹配sixth或fourth                       |
+
+#### re模块
+
+用于实现Python中的正则表达式
+
+| 函数                                      | 功能描述                                                     |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| re.match(pattern,string,flags=0)          | 用于从字符串的开始位置及逆行匹配，如果起始位置匹配成功，结果为Match对象，否则结果为None |
+| re.search(pattern,string,flags=0)         | 用于在整个字符串中搜索第一个匹配的值，如果匹配成功，结果为Match对象，否则结果为None |
+| re.findall(pattern,string,flags=0)        | 用于整个字符串搜索所有符合正则表达式的值，结果是一个列表类型 |
+| re.sub(pattern,repl,string,count,flags=0) | 用于实现对字符串中指定字串的替换                             |
+| re.split(pattern,string,maxsplit,flags=0) | 字符串中的split()方法功能相同，都是分隔字符串                |
+
+##### match函数
+
+从头开始匹配
+
+```python
+import re
+pattern = '\d\.\d+'
+s = 'I study Python 3.11 everyday'
+match = re.match(pattern,s,re.I)
+print(match)
+s2 = '3.11Python I study everyday'
+match2 = re.match(pattern,s2)
+print(match2)
+
+print('匹配值的起始位置:',match2.start())
+print('匹配值的结束位置:',match2.end())
+print('匹配区间的位置元素:',match2.span())
+print('待匹配的字符串:',match2.string)
+print('匹配的数据:',match2.group())
+```
+
+输出结果为：
+
+```python
+None
+<re.Match object; span=(0, 4), match='3.11'>
+匹配值的起始位置: 0
+匹配值的结束位置: 4
+匹配区间的位置元素: (0, 4)
+待匹配的字符串: 3.11Python I study everyday
+匹配的数据: 3.11
+```
+
+##### search函数
+
+从头开始匹配到第一个值即返回结果
+
+##### findall函数
+
+找出所有符合条件的结果，并返回列表
+
+##### sub函数
+
+对指定字符串进行替换
+
+```python
+import re
+pattern = '黑客|破解|反爬'
+s = '我想学习Python，想破解一些VIP视频，Python可以实现无底线反爬吗？'
+new_s = re.sub(pattern,'xxx',s)
+print(new_s)
+```
+
+输出结果为：
+
+```python
+我想学习Python，想xxx一些VIP视频，Python可以实现无底线xxx吗？
+```
+
+##### split函数
+
+分隔字符串
+
+```python
+import re
+pattern = '[?|&]'
+s = 'https://www.bilibili.com/video/BV1wD4y1o7AS?p=74&vd_source=7facf7a4f15d7a63776efb820efd58e6'
+new_s = re.split(pattern,s)
+print(new_s)
+```
+
+输出结果为
+
+```python
+['https://www.bilibili.com/video/BV1wD4y1o7AS', 'p=74', 'vd_source=7facf7a4f15d7a63776efb820efd58e6']
+```
+

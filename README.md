@@ -2073,3 +2073,247 @@ def 函数名称(参数列表):
 | eval(s)                   | 去掉字符串s两侧引号使其成为python代码 |
 
 ## 面向对象
+
+### 自定义类和创建自定义类的对象
+
+自定义数据类型的语法结构为
+
+```python
+class 类名():
+    pass
+```
+
+创建对象的语法格式为：
+
+```python
+对象名 = 类名()
+```
+
+### 类的组成
+
+-  类属性：直接定义在类中，方法外的变量
+- 实例属性：定义在\_init\_方法中，使用self打点的变量
+- 实例方法：定义在类中的函数，而且自带参数self
+- 静态方法：使用装饰器@staticmethod修饰的方法
+- 类方法：使用装饰器@classmethod修饰的方法
+
+#### 初始化方法
+
+名称必须是`__init__`，可以传入参数，但参数的作用域仅限于init函数，所以需要定义类的实例属性。
+
+```python
+class Student:
+    school = 'Dida'
+    def __init__(self,xm,age) -> None:
+        self.name = xm
+        self.age = age
+```
+
+#### 实例方法
+
+定义在类中的函数，自带一个参数`self`。
+
+```python
+def show(self):
+    print(f'我叫:{self.name},今年:{self.age}岁了')
+```
+
+#### 静态方法
+
+类名调用
+
+```python
+@staticmethod
+def sm():
+    print("这是一个静态方法，不能调用实例属性，也不能调用实例方法")
+```
+
+#### 类方法
+
+类名调用
+
+```python
+@classmethod
+def cm(cls):
+    print("这是一个类方法，不能调用实例属性，也不能调用实例方法")
+```
+
+#### 创建类的对象
+
+```python
+stu = Student('dz',18)
+# 对应上方的init方法，内部包含两个参数
+```
+
+#### 动态绑定属性和方法
+
+##### 动态绑定属性
+
+直接对对象进行属性赋值，即可动态绑定属性：仅对于对象
+
+```python
+class Student:
+    school = 'Dida'
+    def __init__(self,xm,age) -> None:
+        self.name = xm
+        self.age = age
+        
+stu = Student("丁真",18)
+stu.gender = "男"
+print(stu.name,stu.age,stu.gender)
+```
+
+输出结果：
+
+```python
+dingzhen 18 男
+```
+
+##### 动态绑定方法
+
+定义函数之后，给属性赋值为方法即可。
+
+```python
+def introduce():
+    print("动态绑定方法")
+
+stu.fun = introduce
+stu.fun()
+```
+
+输出结果：
+
+```python
+动态绑定方法
+```
+
+### 封装
+
+隐藏内部细节，对外提供操作方式。
+
+#### 权限控制
+
+通过对属性或方法添加下划线、双下划线以及首位下划线来实现。
+
+- 单下划线开头：以单下划线开头的属性或方法表示protect受保护的成员，这类成员被视为仅供内部使用，允许类本身和子类进行访问，但实际上它可以被外部代码访问。
+- 双下划线开头：表示private私有的成员，这类成员只允许定义该属性或方法的类本身进行访问。
+- 首尾双下划线：一般表示特殊的方法。
+
+**强制使用私有属性和方法的方式(不建议使用)：**
+
+```python
+对象名._类名__私有属性或方法
+```
+
+#### 属性的设置
+
+装饰器的使用。
+
+对于需要访问的私有属性，通过方法传递参数，并设置装饰器`@property`，若想访问该属性只需通过调用对象名的属性即可。
+
+对于需要修改的私有属性，先通过装饰器编写读方法，再通过读的方法名创建setter方法，传递的参数包含要修改的值即可。
+
+装饰器命名：读方法`@property`，方法名称为属性名，传递参数仅包含自身(self)；修改方法`@属性名.setter`，方法名称为属性名，传递参数包含自身和要修改的值。
+
+这种私有属性的设置类同于Java中的getter和setter方法。
+
+```python
+class student():
+    # 属性的设置
+    def __init__(self,name,gender):
+        self.name = name    #公共属性
+        self.__gender = gender      #私有属性
+
+    @property
+    def gender(self):
+        return self.__gender
+    
+    @gender.setter
+    def gender(self,value):
+        if value != "男" and value != "女":
+            self.__gender = "MTF"
+        else:
+            self.__gender = value
+
+stu = student("丁真","女")
+print(stu.name,"的性别是：",stu.gender)
+stu.gender = "无"
+print(stu.name,"的性别是：",stu.gender)
+stu.gender = "男"
+print(stu.name,"的性别是：",stu.gender)
+```
+
+输出结果为：
+
+```python
+丁真 的性别是： 女
+丁真 的性别是： MTF
+丁真 的性别是： 男
+```
+
+### 继承
+
+在python中一个子类可以继承多个父类，一个父类也可以拥有多个子类，如果一个类没有继承任何类，那么这个类默认继承的是object类。
+
+#### 语法结构
+
+```python
+class 类名(父类1,父类2,...,父类N):
+    pass
+```
+
+#### 调用父类方法
+
+```python
+super().方法名(参数)
+```
+
+#### 多继承
+
+子类继承了多个父类的情况下调用父类方法时，不能直接使用`super()`来调用父类方法。
+
+```python
+父类名.方法名(参数)
+```
+
+#### 方法重写
+
+重写父类的方法
+
+#### 多态
+
+在程序运行过程中根据变量所引用对象的数据类型，动态决定调用哪个对象中的方法。
+
+Python中的多态不同于其他语言，其只关心对象的方法。只要不同的类中有同名的方法，即可实现多态。
+
+通过父类作为参数，传入子类时，仍然可以正常运行。
+
+```python
+class Person():
+    def eat():
+        print("🧑吃🍚")
+
+class Cat():
+    def eat():
+        print("🐱吃🐟")
+
+class Dog():
+    def eat():
+        print("🐕吃💩")
+
+def fun(obj):
+    obj.eat()
+
+fun(Person)
+fun(Cat)
+fun(Dog)
+```
+
+输出结果为
+
+```python
+🧑吃🍚
+🐱吃🐟
+🐕吃💩
+```
+
